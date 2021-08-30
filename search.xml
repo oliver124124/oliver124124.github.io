@@ -39,4 +39,33 @@
     <url>/uncategorized/test/</url>
     <content><![CDATA[]]></content>
   </entry>
+  <entry>
+    <title>centos安装环境</title>
+    <url>/uncategorized/centos%E5%AE%89%E8%A3%85%E7%8E%AF%E5%A2%83/</url>
+    <content><![CDATA[<h2 id="jdk"><a class="markdownIt-Anchor" href="#jdk"></a> jdk</h2>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查看java安装包</span></span><br><span class="line">yum list java *</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装jdk1.8</span></span><br><span class="line">yum install java-1.8.0-openjdk* -y</span><br></pre></td></tr></table></figure>
+<h2 id="mysql"><a class="markdownIt-Anchor" href="#mysql"></a> mysql</h2>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查看mysql安装包</span></span><br><span class="line">yum list mysql*</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 下载mysql5.7安装包</span></span><br><span class="line">wget https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装mysql安装源</span></span><br><span class="line">yum -y localinstall mysql57-community-release-el7-11.noarch.rpm </span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装mysql</span></span><br><span class="line">yum -y install mysql-community-server</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 启动mysql服务</span></span><br><span class="line">systemctl start mysqld</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash">设置开机自启动</span></span><br><span class="line">systemctl enable mysqld</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash">重新加载配置</span></span><br><span class="line">systemctl daemon-reload</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>​	mysql安装完之后，会生成一个默认密码在/var/log/mysqld.log</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">vim /var/log/mysqld.log</span><br></pre></td></tr></table></figure>
+<p><img data-src="https://raw.githubusercontent.com/oliver124124/img/master/img/20210822161220.png" alt="截屏2021-08-22 下午3.45.28" /></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 登录mysql</span></span><br><span class="line">mysql -u root -p</span><br></pre></td></tr></table></figure>
+<p>​	输入刚才的默认密码1%Yqtxdyka95</p>
+<p><img data-src="https://raw.githubusercontent.com/oliver124124/img/master/img/20210822161108.png" alt="截屏2021-08-22 下午4.06.26" /></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">更改密码1%Yqtxdyka</span></span><br><span class="line">ALTER USER &#x27;root&#x27;@&#x27;localhost&#x27; IDENTIFIED BY &#x27;你想要改的密码&#x27;;</span><br></pre></td></tr></table></figure>
+<p>可能会出现以下错误，原因是没有符合mysql默认的密码策略</p>
+<p><img data-src="https://raw.githubusercontent.com/oliver124124/img/master/img/20210822164058.png" alt="截屏2021-08-22 下午4.40.56" /></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">输入查看密码策略（前提有安装validate_password插件，一般都默认安装）</span></span><br><span class="line">show variables like &#x27;validate_password%&#x27;;</span><br></pre></td></tr></table></figure>
+<p><img data-src="https://raw.githubusercontent.com/oliver124124/img/master/img/20210822164352.png" alt="截屏2021-08-22 下午4.43.49" /></p>
+<p>可以看到七个参数：</p>
+<ul>
+<li>validate_password_length：固定密码的总长度</li>
+<li>validate_password_dictionary_file：密码验证的文件路径</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>mall</tag>
+      </tags>
+  </entry>
 </search>
