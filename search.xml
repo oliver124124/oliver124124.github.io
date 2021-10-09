@@ -1,24 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>/uncategorized/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>centos安装环境</title>
     <url>/centos%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83/centos%E5%AE%89%E8%A3%85%E7%8E%AF%E5%A2%83/</url>
     <content><![CDATA[<h2 id="jdk"><a href="#jdk" class="headerlink" title="jdk"></a>jdk</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查看java安装包</span></span><br><span class="line">yum list java *</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装jdk1.8</span></span><br><span class="line">yum install java-1.8.0-openjdk* -y</span><br></pre></td></tr></table></figure>
@@ -57,27 +39,23 @@
     <title>mysql密码策略</title>
     <url>/centos%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83/mysql%E5%AF%86%E7%A0%81%E7%AD%96%E7%95%A5/</url>
     <content><![CDATA[<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">输入查看密码策略（前提有安装validate_password插件，一般都默认安装）</span></span><br><span class="line">show variables like &#x27;validate_password%&#x27;;</span><br></pre></td></tr></table></figure>
-<p><img data-src="https://raw.githubusercontent.com/oliver124124/img/master/img/20210822164352.png" alt="截屏2021-08-22 下午4.43.49" /></p>
+
+<p><img data-src="https://raw.githubusercontent.com/oliver124124/img/master/img/20210822164352.png" alt="截屏2021-08-22 下午4.43.49"></p>
 <span id="more"></span>
+
 <p>可以看到七个参数：</p>
 <ul>
-<li>
-<p>validate_password_check_user_name：是否将密码与当前会话的帐户的用户名部分进行比较，如果匹配则将其拒绝</p>
+<li><p>validate_password_check_user_name：是否将密码与当前会话的帐户的用户名部分进行比较，如果匹配则将其拒绝</p>
 </li>
-<li>
-<p>validate_password_length：密码的最小长度</p>
+<li><p>validate_password_length：密码的最小长度</p>
 </li>
-<li>
-<p>validate_password_dictionary_file：密码验证的字典文件路径</p>
+<li><p>validate_password_dictionary_file：密码验证的字典文件路径</p>
 </li>
-<li>
-<p>validate_password_mixed_case_count：密码中至少包含的大小写字母个数</p>
+<li><p>validate_password_mixed_case_count：密码中至少包含的大小写字母个数</p>
 </li>
-<li>
-<p>validate_password_number_count：密码中至少包含的数字个数</p>
+<li><p>validate_password_number_count：密码中至少包含的数字个数</p>
 </li>
-<li>
-<p>validate_password_policy：密码的强度验证等级</p>
+<li><p>validate_password_policy：密码的强度验证等级</p>
 <p>分为三种：</p>
 <ol>
 <li>LOW：只验证密码长度</li>
@@ -85,12 +63,11 @@
 <li>STRONG：验证密码长度、包含数字个数、包含大小写字母个数、包含特殊字符个数、字典文件；</li>
 </ol>
 </li>
-<li>
-<p>validate_password_special_char_count： 密码中至少包含特殊字符的个数</p>
+<li><p>validate_password_special_char_count： 密码中至少包含特殊字符的个数</p>
 </li>
 </ul>
-<p>  所有的设置都可以使用set global+参数名进行设置，例如<code>set global validate_password_length=6;</code>就可以设置密码最短长度为6位</p>
-<p>  主要是用的是密码强度验证等级，例如上图的默认设置，验证密码长度、数字个数、大小写字母个数、特殊字符个数，那么密码至少包含一位数字，一个大写字母，一个小写字母，一个特殊字符，至少为4位，剩下的随意补充，因此最短长度不能设置为少于4位，这个长度会随着其余参数的修改动态修改。</p>
+<p> &emsp;&emsp;所有的设置都可以使用set global+参数名进行设置，例如<code>set global validate_password_length=6;</code>就可以设置密码最短长度为6位</p>
+<p>&emsp;&emsp;主要是用的是密码强度验证等级，例如上图的默认设置，验证密码长度、数字个数、大小写字母个数、特殊字符个数，那么密码至少包含一位数字，一个大写字母，一个小写字母，一个特殊字符，至少为4位，剩下的随意补充，因此最短长度不能设置为少于4位，这个长度会随着其余参数的修改动态修改。</p>
 ]]></content>
       <categories>
         <category>centos配置环境</category>
@@ -158,5 +135,23 @@
       <tags>
         <tag>小知识</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/uncategorized/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
   </entry>
 </search>

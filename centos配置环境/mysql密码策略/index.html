@@ -291,27 +291,23 @@
     
     <div class="post-body" itemprop="articleBody">
         <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">输入查看密码策略（前提有安装validate_password插件，一般都默认安装）</span></span><br><span class="line">show variables like &#x27;validate_password%&#x27;;</span><br></pre></td></tr></table></figure>
-<p><img data-src="https://raw.githubusercontent.com/oliver124124/img/master/img/20210822164352.png" alt="截屏2021-08-22 下午4.43.49" /></p>
+
+<p><img data-src="https://raw.githubusercontent.com/oliver124124/img/master/img/20210822164352.png" alt="截屏2021-08-22 下午4.43.49"></p>
 <span id="more"></span>
+
 <p>可以看到七个参数：</p>
 <ul>
-<li>
-<p>validate_password_check_user_name：是否将密码与当前会话的帐户的用户名部分进行比较，如果匹配则将其拒绝</p>
+<li><p>validate_password_check_user_name：是否将密码与当前会话的帐户的用户名部分进行比较，如果匹配则将其拒绝</p>
 </li>
-<li>
-<p>validate_password_length：密码的最小长度</p>
+<li><p>validate_password_length：密码的最小长度</p>
 </li>
-<li>
-<p>validate_password_dictionary_file：密码验证的字典文件路径</p>
+<li><p>validate_password_dictionary_file：密码验证的字典文件路径</p>
 </li>
-<li>
-<p>validate_password_mixed_case_count：密码中至少包含的大小写字母个数</p>
+<li><p>validate_password_mixed_case_count：密码中至少包含的大小写字母个数</p>
 </li>
-<li>
-<p>validate_password_number_count：密码中至少包含的数字个数</p>
+<li><p>validate_password_number_count：密码中至少包含的数字个数</p>
 </li>
-<li>
-<p>validate_password_policy：密码的强度验证等级</p>
+<li><p>validate_password_policy：密码的强度验证等级</p>
 <p>分为三种：</p>
 <ol>
 <li>LOW：只验证密码长度</li>
@@ -319,12 +315,11 @@
 <li>STRONG：验证密码长度、包含数字个数、包含大小写字母个数、包含特殊字符个数、字典文件；</li>
 </ol>
 </li>
-<li>
-<p>validate_password_special_char_count： 密码中至少包含特殊字符的个数</p>
+<li><p>validate_password_special_char_count： 密码中至少包含特殊字符的个数</p>
 </li>
 </ul>
-<p>  所有的设置都可以使用set global+参数名进行设置，例如<code>set global validate_password_length=6;</code>就可以设置密码最短长度为6位</p>
-<p>  主要是用的是密码强度验证等级，例如上图的默认设置，验证密码长度、数字个数、大小写字母个数、特殊字符个数，那么密码至少包含一位数字，一个大写字母，一个小写字母，一个特殊字符，至少为4位，剩下的随意补充，因此最短长度不能设置为少于4位，这个长度会随着其余参数的修改动态修改。</p>
+<p> &emsp;&emsp;所有的设置都可以使用set global+参数名进行设置，例如<code>set global validate_password_length=6;</code>就可以设置密码最短长度为6位</p>
+<p>&emsp;&emsp;主要是用的是密码强度验证等级，例如上图的默认设置，验证密码长度、数字个数、大小写字母个数、特殊字符个数，那么密码至少包含一位数字，一个大写字母，一个小写字母，一个特殊字符，至少为4位，剩下的随意补充，因此最短长度不能设置为少于4位，这个长度会随着其余参数的修改动态修改。</p>
 
     </div>
 
